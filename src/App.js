@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import StarIcon from '@mui/icons-material/Star';
-import AutoComplete from './components/AutoComplete/AutoComplete.js';
+import WeatherAutoComplete from './components/WeatherAutoComplete/WeatherAutoComplete.js';
 
 export default function App() {
   return (
@@ -32,7 +32,7 @@ export default function App() {
         </Typography>
       </Toolbar>
     </AppBar>
-    <AutoComplete></AutoComplete>
+    <WeatherAutoComplete></WeatherAutoComplete>
   </Box>
   );
 }

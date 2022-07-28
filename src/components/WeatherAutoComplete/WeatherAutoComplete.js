@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Autocomplete, TextField } from "@mui/material";
-import "./AutoComplete.css";
+import "./WeatherAutoComplete.css";
 import { search } from "../../rest/axios";
 import CityWeather from "../CityWeather/CityWeather";
 
-export default function AutoComplete() {
+export default function WeatherAutoComplete() {
   const [options, setOptions] = React.useState([]);
   const [value, setValue] = React.useState();
 
@@ -40,7 +40,7 @@ export default function AutoComplete() {
           <TextField {...params} label="Search For City..." />
         )}
       />
-      {value && <CityWeather choosenCity={value} />}
+      {value && <CityWeather chosenCity={value} />}
     </div>
   );
 }
