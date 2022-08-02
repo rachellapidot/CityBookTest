@@ -17,3 +17,14 @@ export const getCityWeather = (key) => {
     },
   });
 };
+
+export const getFavorites = () => {
+  return axios.get(baseUrl + "favorite/");
+};
+
+export const addToFavorites = (favorite) => {
+  return axios.post(baseUrl + "favorite/", {
+    cityKey: parseInt(favorite.key),
+    cityName: favorite.label,
+  });
+};

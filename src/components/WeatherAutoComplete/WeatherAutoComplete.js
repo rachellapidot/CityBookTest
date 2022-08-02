@@ -1,12 +1,12 @@
-import * as React from "react";
+import { useState } from "react";
 import { Autocomplete, TextField } from "@mui/material";
 import "./WeatherAutoComplete.css";
-import { search } from "../../rest/axios";
+import { search } from "../../api/weather";
 import CityWeather from "../CityWeather/CityWeather";
 
-export default function WeatherAutoComplete() {
-  const [options, setOptions] = React.useState([]);
-  const [value, setValue] = React.useState();
+const WeatherAutoComplete = ({ addFavourite }) => {
+  const [options, setOptions] = useState([]);
+  const [value, setValue] = useState();
 
   const onInputChange = (event, string) => {
     if (event.type === "change") {
@@ -40,7 +40,11 @@ export default function WeatherAutoComplete() {
           <TextField {...params} label="Search For City..." />
         )}
       />
-      {value && <CityWeather chosenCity={value} />}
+      {value && (
+        <CityWeather handleAddToFavourite={addFavourite} chosenCity={value} />
+      )}
     </div>
   );
-}
+};
+
+export default WeatherAutoComplete;
